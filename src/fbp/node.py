@@ -2,7 +2,7 @@
 
 import traceback, pdb
 
-from port import Inport, Outport
+from .port import Inport, Outport
 
 OUTPORT_DEFAULT_NAME = "out"
 

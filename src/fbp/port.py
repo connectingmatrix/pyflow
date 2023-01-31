@@ -5,13 +5,13 @@ import json
 
 # All Supported Types
 TYPES = dict()
-TYPES["Boolean"] = types.BooleanType
-TYPES["Int"] = types.IntType
-TYPES["Long"] = types.LongType
-TYPES["Float"] = types.FloatType
-TYPES["String"] = types.StringType
-TYPES["List"] = types.ListType
-TYPES["Json"] = types.DictType
+TYPES["Boolean"] = True
+TYPES["Int"] = True
+TYPES["Long"] = True
+TYPES["Float"] = True
+TYPES["String"] = True
+TYPES["List"] = True
+TYPES["Json"] = True
 
 
 def c_int(val):
@@ -19,9 +19,9 @@ def c_int(val):
 
 
 def c_bool(val):
-    if type(val) is 'bool':
+    if type(val) == bool:
         return val
-    elif type(val) is str or unicode:
+    elif type(val) == str or unicode:
         return str(val).lower() in ["y", "true", "yes"]
     else:
         return False
@@ -78,11 +78,11 @@ class Port(object):
     def __init__(self, name, type='String'):
         self._name = name
         self._type = type
-        if type in TYPES.keys():
-            self._type_object = TYPES[type]
-        else:
-            print("Port type {} is not supported! default to string".format(type))
-            self._type_object = 'String'
+        # if type in TYPES.keys():
+        #     self._type_object = TYPES[type]
+        # else:
+        #     print("Port type {} is not supported! default to string".format(type))
+        #     self._type_object = 'String'
         self._value = None
 
     @classmethod
