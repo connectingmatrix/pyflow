@@ -161,6 +161,8 @@ resttest.py http://localhost:5000 test.yaml --verbose
 
 ## Open Issues and Todo list
 
+- Complete the porting to Python3
+- Each function can be ran in a seperate conda ennvironment
 - Now a static execution engine (run once per a node in a seperated process) is supported, no streaming support 
 - Port type validations is not implemented
 - Support running each function as a docker instance instead of python eval which is much more secure and flexible
